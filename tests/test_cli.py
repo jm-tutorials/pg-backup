@@ -31,9 +31,9 @@ def test_parser_with_driver_and_destination():
     """
 
     parser = cli.create_parser()
-    parser.parse_args([url, "--driver", "local", "/some/path"])
+    args = parser.parse_args([url, "--driver", "local", "/some/path"])
 
-    assert arg.url == url
+    assert args.url == url
     assert args.driver == "local"
     assert args.destination == "/some/path"
 
